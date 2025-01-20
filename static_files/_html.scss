@@ -1,0 +1,114 @@
+@import "./variables";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $TenorFont;
+    color: #FFFFFF;
+}
+
+h1, h2, h3 { 
+    font-family: $CinzelFont;
+}
+
+h1 {
+    font-size: 96px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-family: $OverpassFont;
+    font-size: 32px;
+}
+
+h4 { 
+    font-family: $TenorFont;
+    font-size: 48px;
+    font-weight: 100;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+.btn:hover .btn-slide-show-text1 {
+    margin-left: 20px;
+} 
+   
+.btn-text-stretch {
+    letter-spacing: 0px;
+    box-sizing: inherit;
+    transition-property: all;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+    margin: 0px 0px 2em;
+    max-width: 160px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+} 
+   
+.btn-text-stretch:hover {
+    letter-spacing: 5px;
+} 
+   
+.btn-text-stretch::before {
+    backface-visibility: hidden;
+    bottom: 0px;
+    content: " ";
+    margin: 0px auto;
+    position: relative;
+    transition: 0.4s ease-in-out;
+    width: 0px;
+} 
+   
+.btn-text-stretch:hover::before {
+    backface-visibility: hidden;
+    transition: width 0.5s ease-in-out;
+    width: 70%;
+    bottom: auto;
+    top: 0px;
+    width: 70%;
+} 
+   
+.btn-text-stretch--white {
+    color: white;
+} 
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2023;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #b5b5b3; 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $blue-color; 
+}

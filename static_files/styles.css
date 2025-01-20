@@ -1,0 +1,666 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Tenor Sans", serif;
+  color: #FFFFFF;
+}
+
+h1, h2, h3 {
+  font-family: "Cinzel Decorative", serif;
+}
+
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-family: "Overpass", serif;
+  font-size: 32px;
+}
+
+h4 {
+  font-family: "Tenor Sans", serif;
+  font-size: 48px;
+  font-weight: 100;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 20px;
+}
+
+.btn-text-stretch {
+  letter-spacing: 0px;
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+  margin: 0px 0px 2em;
+  max-width: 160px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn-text-stretch:hover {
+  letter-spacing: 5px;
+}
+
+.btn-text-stretch::before {
+  backface-visibility: hidden;
+  bottom: 0px;
+  content: " ";
+  margin: 0px auto;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  width: 0px;
+}
+
+.btn-text-stretch:hover::before {
+  backface-visibility: hidden;
+  transition: width 0.5s ease-in-out;
+  width: 70%;
+  bottom: auto;
+  top: 0px;
+  width: 70%;
+}
+
+.btn-text-stretch--white {
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2023;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5b5b3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B6C2F6;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#body {
+  display: grid;
+  grid-template-areas: "maincontainer" "artworkgallery" "about" "footer";
+  grid-template-rows: 871px 1000px 700px 434px;
+  margin-right: auto;
+}
+
+#button {
+  font-size: 24px;
+  font-family: "Overpass", serif;
+  padding: 8px 35px 8px 35px;
+  background-color: none;
+  border: solid white 3px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.maincontainer {
+  grid-area: maincontainer;
+  padding-inline: 30px;
+  display: grid;
+  grid-template-areas: "headerbar headerbar" "picture artistinfo" "picture artistinfo" "picture artistinfo" "picture button" "... extras";
+  grid-template-columns: 578px 864px;
+  grid-template-rows: 150px 130px 58px 174px 100px;
+}
+
+.bg_parallax {
+  position: relative;
+  background-image: url("Images/Sample-Image.png");
+  background-color: #191A20;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.bg_parallax:nth-child(2) {
+  background-image: url(Images/Sample-Image.png);
+}
+
+.bg_parallax:nth-child(2) .inner p:first-child {
+  padding-top: 50vh;
+}
+
+.header {
+  grid-area: maincontainer;
+  grid-area: headerbar;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 20px;
+}
+
+.mainfirstcolumn {
+  grid-area: picture;
+  align-items: start;
+  padding-inline: 0;
+  margin-left: -30px;
+}
+
+.mainsecondcolumn {
+  grid-area: artistinfo;
+  align-items: start;
+  margin-left: 30px;
+}
+.mainsecondcolumn p {
+  padding: 20px 20px 0px 0px;
+}
+
+.register2 {
+  display: none;
+}
+
+.reference {
+  margin-left: 30px;
+  grid-area: button;
+}
+
+#label {
+  font-family: "Tenor Sans", serif;
+  font-size: 16px;
+  font-weight: 100;
+  margin-left: 20px;
+  grid-area: extras;
+  align-self: last baseline;
+  text-align: right;
+  padding: 10px;
+}
+
+.artworkgallery {
+  grid-area: artworkgallery;
+  background-color: #E3E4DB;
+  display: grid;
+  grid-template-areas: "titlecard ..." "gallerycontainer gallerycontainer" "scrollingtext scrollingtext";
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  color: #191A20;
+  padding-inline: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallerycontainer {
+  grid-area: gallerycontainer;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.gallerycontainer .mainpainting {
+  grid-column: 1/2;
+  text-align: center;
+}
+.gallerycontainer .mainpainting img {
+  transition: transform 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.gallerycontainer .mainpainting img:hover {
+  transform: scale(1.05);
+}
+.gallerycontainer .mainpainting h5 {
+  font-family: "Overpass", serif;
+  font-size: 40px;
+  padding-top: 15px;
+}
+.gallerycontainer .mainpainting h6 {
+  font-family: "Tenor Sans", serif;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.titlecard {
+  grid-area: titlecard;
+  display: grid;
+  grid-template-columns: 650px 40%;
+  align-items: last baseline;
+  margin-left: auto;
+}
+.titlecard h3 {
+  grid-column: 2/3;
+}
+.titlecard #subheading {
+  font-size: 24px;
+  margin-left: -50px;
+}
+
+.sidepaintings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 305px);
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.sidepaintings img {
+  height: 90%;
+  opacity: 0.4;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.sidepaintings img:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+.sidepaintings .secondarypainting {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+.sidepaintings .tertiarypainting {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+.sidepaintings .paintinginfo {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+.scrollingtext {
+  margin: 0;
+  grid-area: scrollingtext;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scroll {
+  white-space: nowrap;
+  margin: 0 2em;
+}
+
+.scroll div {
+  display: flex;
+  gap: 2em;
+}
+
+.scroll p {
+  font-size: 5em;
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 10px;
+}
+
+.RightToLeft {
+  animation: RightToLeft 15s infinite linear;
+}
+
+.about {
+  grid-area: about;
+  background-color: #E3E4DB;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #E3E4DB;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  background-image: url("Images/Paul_Alexis_Lê_um_Manuscrito_a_Zola.png");
+  background-color: #191A20;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.about h1 {
+  position: absolute;
+  z-index: 2;
+  margin-bottom: 450px;
+}
+.about #information {
+  font-size: 1.5em;
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  text-align: justify;
+  padding: 50px;
+  font-weight: 300;
+}
+.about .halo {
+  position: relative;
+  z-index: 1;
+  opacity: 0.1;
+  animation: spin 35s infinite linear;
+}
+.about #label {
+  position: absolute;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #191A20;
+  padding-inline: 50px;
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: 864px 268px 268px;
+  grid-template-rows: 1fr 105px;
+  line-height: 50px;
+}
+.footer a {
+  display: inline-block;
+  margin-top: 20px;
+  height: 18%;
+}
+
+.copyright {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  align-self: center;
+  text-align: center;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.mobilebackground {
+  display: none;
+}
+
+@media screen and (min-width: 430px) and (max-width: 720px) {
+  h1 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 2.8em;
+  }
+  h2 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1.6em;
+  }
+  h3 {
+    font-family: "Overpass", serif;
+    font-size: 1.6em;
+  }
+  p {
+    font-family: "Tenor Sans", serif;
+    font-size: 1.4em;
+  }
+  #button {
+    font-size: 28px;
+  }
+  body {
+    margin: auto;
+  }
+  #body {
+    grid-template-areas: "maincontainer" "maincontainer" "artworkgallery" "about" "footer";
+    grid-template-rows: 600px 700px 1900px auto;
+    grid-template-columns: 100vh;
+  }
+  .maincontainer {
+    grid-area: maincontainer;
+    padding-inline: 5px;
+    margin-left: 0;
+    background-image: url("Images/paul_cezanne.jpg");
+    background-color: #191A20;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #191A20;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .bg_parallax {
+    display: inline-block;
+  }
+  .header {
+    grid-area: headerbar;
+    white-space: nowrap;
+    padding-inline: 15px;
+    text-align: center;
+  }
+  .header .register {
+    display: none;
+  }
+  .register2, .reference {
+    grid-area: register2;
+    display: block;
+    float: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    justify-self: center;
+    text-align: center;
+    padding: 30px;
+    margin-left: unset;
+  }
+  .register2 #button, .reference #button {
+    padding: 10px 210px 10px 210px;
+  }
+  .reference #button {
+    padding: 10px 190px 10px 190px;
+  }
+  .mainfirstcolumn img {
+    display: none;
+  }
+  .mainsecondcolumn {
+    display: block;
+    padding: 50px;
+  }
+  #label {
+    justify-self: center;
+    text-align: center;
+  }
+  .mobilebackground {
+    display: block;
+    max-height: 100%;
+    content: "";
+  }
+  .mobilebackground img {
+    height: 65vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transform: scale(1);
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .mobilebackground img:hover {
+    transform: scale(1.05);
+  }
+  .artworkgallery {
+    grid-template-areas: "titlecard ..." "gallerycontainer gallerycontainer" "gallerycontainer gallerycontainer" "scrollingtext scrollingtext";
+    grid-template-rows: 25vw 1fr 1fr 300px;
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 5px;
+    row-gap: 5px;
+    padding: -30px;
+  }
+  .titlecard {
+    grid-area: titlecard;
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 0;
+    padding-inline: 30px;
+    justify-content: right;
+    align-items: right;
+  }
+  .titlecard h3 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-left: -30;
+  }
+  .titlecard #subheading {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    white-space: nowrap;
+  }
+  .gallerycontainer {
+    align-self: first baseline;
+    grid-area: gallerycontainer;
+    row-gap: 20px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+    grid-template-rows: 55% 1fr;
+  }
+  .gallerycontainer .mainpainting {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .gallerycontainer .mainpainting img {
+    width: 80%;
+    margin-left: 0;
+    border-radius: 30px;
+  }
+  .sidepaintings {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .sidepaintings .secondarypainting {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .sidepaintings .tertiarypainting {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .sidepaintings .paintinginfo {
+    font-size: 0.9em;
+    font-weight: 100;
+    padding: 0px 50px 0px 50px;
+  }
+  .scrollingtext {
+    font-size: 0.6em;
+    padding-top: 100px;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-image: url("Images/Paul_Alexis_Lê_um_Manuscrito_a_Zola.png");
+    background-color: #191A20;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .about h1 {
+    all: unset;
+    position: absolute;
+    font-family: "Cinzel Decorative", serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 350px;
+  }
+  .about #information {
+    all: unset;
+    position: absolute;
+    font-family: "Overpass", serif;
+    font-size: 1.5em;
+    text-align: justify;
+    padding: 40px;
+  }
+  .about #label {
+    position: relative;
+    justify-self: baseline;
+    text-align: center;
+  }
+  .footer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 20px;
+    grid-column: 1/2;
+  }
+  .footer .endfirstcolumn {
+    grid-row: 1/2;
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .footer .endfirstcolumn #button {
+    justify-self: center;
+    text-align: center;
+    grid-column: 1/2;
+    padding: 10px 200px 10px 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer .endfirstcolumn .btn {
+    margin-top: 50px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer .endsecondcolumn {
+    grid-row: 2/3;
+  }
+  .footer .endthirdcolumn {
+    grid-row: 3/4;
+  }
+  .footer .copyright {
+    grid-row: 4/5;
+  }
+}
+#topbutton {
+  display: none;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 20px;
+  position: fixed;
+  background-color: transparent;
+  color: #E3E4DB;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: solid white 2px;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+#topbutton:hover {
+  background-color: rgb(216, 216, 216);
+  color: #191A20;
+}/*# sourceMappingURL=styles.css.map */

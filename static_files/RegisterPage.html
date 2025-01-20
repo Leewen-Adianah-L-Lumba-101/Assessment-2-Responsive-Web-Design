@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "login.css">
+</head>
+
+<body class = "bg_parallax">
+    <div class = "logo">
+        <a href = "index.html"><h2>A MOMENT OF RESPITE</h2></a>
+    </div>
+
+    <div class = "registerbox inner">
+        <h4 id = "item1">REGISTER</h4>
+        
+        <p>
+            Sign up for the newsletter today, gain more knowledge, and continue pursuing the historic agency of art!
+        </p>
+
+        <form action = "http://localhost:3000/sendmail" method = "POST">
+            <label for = "email" id = "emaillabel"><b>Email:</b></label>
+            
+            <input name = "to" type = "email" placeholder = "Enter Email" required id = "email" id = "useremail">
+
+            <div class="container">
+                I agree to the terms and conditions.
+                <input type="checkbox" checked= "uncheck">
+                <span class="checkmark"></span>
+            </div>
+
+            <input type = "submit" id = "button" class = "btn btn-text-stretch btn-text-stretch--white" value = 'SIGN UP'/>
+        </form>
+    </div>
+
+    <h6 id = "label">Still Life with Apples and Pear, Paul Cezanne (1891-92)</h6>
+</body>
+</html>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.7.0/Tween.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script><script src="javascript.js" async></script>
+<script src = "emailer.js" async></script>
