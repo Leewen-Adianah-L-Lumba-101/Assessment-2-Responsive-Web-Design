@@ -23,8 +23,9 @@ const transporter = nodemailer.createTransport({
   //dotenv doesnt work for me, no encryption for user/pass
 });
 
-// to allow access to all the responses from the form in register page
-const bodyParser = require("express");
+// Email functions that listen to the local host server, obtains user email address--
+// code from ToThePointCode on YouTube
+const bodyParser = require("express"); // to allow access to all the responses from the form in register page
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
